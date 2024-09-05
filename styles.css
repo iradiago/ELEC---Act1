@@ -1,0 +1,119 @@
+/* Reset some default browser styles */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #4213ff;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Optional: space between items */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    background-color: #575656;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FF6347;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #999898;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #575656;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: #4213ff; /* Match navbar background color */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        z-index: 1000; /* Ensure menu is above other content */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .nav-item {
+        text-align: center; /* Center text within items */
+        width: 100%; /* Ensure items take full width */
+    }
+
+    .dropdown-menu {
+        position: static; /* Positioned within the mobile layout */
+        display: none; /* Hidden by default */
+        width: 100%; /* Full width for mobile view */
+        background-color: #FF6347; /* Match dropdown background color */
+    }
+
+    .nav-list.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon on mobile */
+    }
+}
